@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dljhfbdg3pano"
+path="res://.godot/imported/bird misc a6.mp3-14cbe953a591c09857937cc9b1f3ac9a.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/sfx/bird misc a6.mp3"
+dest_files=["res://.godot/imported/bird misc a6.mp3-14cbe953a591c09857937cc9b1f3ac9a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

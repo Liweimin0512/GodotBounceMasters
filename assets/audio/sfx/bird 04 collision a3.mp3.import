@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://comixwjh5jp4p"
+path="res://.godot/imported/bird 04 collision a3.mp3-51dc536a33cac8ca3447bac0d39c73bd.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/sfx/bird 04 collision a3.mp3"
+dest_files=["res://.godot/imported/bird 04 collision a3.mp3-51dc536a33cac8ca3447bac0d39c73bd.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

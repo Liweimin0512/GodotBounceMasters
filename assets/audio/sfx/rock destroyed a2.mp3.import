@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cecg0ubtq880e"
+path="res://.godot/imported/rock destroyed a2.mp3-9ddfcbe8267c79e3c82eb0c4c977c014.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/sfx/rock destroyed a2.mp3"
+dest_files=["res://.godot/imported/rock destroyed a2.mp3-9ddfcbe8267c79e3c82eb0c4c977c014.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

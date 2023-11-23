@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://damjmidmdoh2y"
+path="res://.godot/imported/rock damage a1.mp3-5f3668bc55358184375f60c241a9498d.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/sfx/rock damage a1.mp3"
+dest_files=["res://.godot/imported/rock damage a1.mp3-5f3668bc55358184375f60c241a9498d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

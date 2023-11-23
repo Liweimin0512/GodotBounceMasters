@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bk1ix86xqbb5h"
+path="res://.godot/imported/bird 01 flying.mp3-b9a8e9da54c512127e09eab318bbf78b.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/sfx/bird 01 flying.mp3"
+dest_files=["res://.godot/imported/bird 01 flying.mp3-b9a8e9da54c512127e09eab318bbf78b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

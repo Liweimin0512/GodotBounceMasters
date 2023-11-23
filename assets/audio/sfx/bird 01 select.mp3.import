@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://568ps0ougyk4"
+path="res://.godot/imported/bird 01 select.mp3-c0282c9a21905609b3993d03443c8639.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/sfx/bird 01 select.mp3"
+dest_files=["res://.godot/imported/bird 01 select.mp3-c0282c9a21905609b3993d03443c8639.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

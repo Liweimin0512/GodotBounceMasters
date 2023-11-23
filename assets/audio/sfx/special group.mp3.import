@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cqbfdrgkw170h"
+path="res://.godot/imported/special group.mp3-3836f205a2333fe9e71b55f5f1c5ebb2.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/sfx/special group.mp3"
+dest_files=["res://.godot/imported/special group.mp3-3836f205a2333fe9e71b55f5f1c5ebb2.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

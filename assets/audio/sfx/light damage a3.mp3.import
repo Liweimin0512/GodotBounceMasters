@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b2wg20qiy0xt2"
+path="res://.godot/imported/light damage a3.mp3-b7ac2ff98838ee716a8b6c5df3877634.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/sfx/light damage a3.mp3"
+dest_files=["res://.godot/imported/light damage a3.mp3-b7ac2ff98838ee716a8b6c5df3877634.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

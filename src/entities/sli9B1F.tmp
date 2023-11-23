@@ -1,0 +1,74 @@
+[gd_scene load_steps=8 format=3 uid="uid://rkisl8v1n1a6"]
+
+[ext_resource type="Texture2D" uid="uid://xirahuk745bn" path="res://assets/textures/INGAME_BIRDS_1.png" id="1_j5cp1"]
+[ext_resource type="Script" path="res://src/entities/slingshot.gd" id="1_sh1m1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e4h88"]
+atlas = ExtResource("1_j5cp1")
+region = Rect2(3, 3, 40, 200)
+
+[sub_resource type="Curve" id="Curve_igv0p"]
+min_value = 0.5
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.5), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nk1od"]
+atlas = ExtResource("1_j5cp1")
+region = Rect2(42, 272, 45, 126)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cn4fe"]
+atlas = ExtResource("1_j5cp1")
+region = Rect2(783, 327, 20, 26)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e7usf"]
+radius = 41.0122
+
+[node name="slingshot" type="Node2D"]
+script = ExtResource("1_sh1m1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(8, -99)
+texture = SubResource("AtlasTexture_e4h88")
+
+[node name="sling_band_right" type="Line2D" parent="."]
+unique_name_in_owner = true
+visible = false
+z_index = -10
+points = PackedVector2Array(15, -169, -106, -141)
+width = 20.0
+width_curve = SubResource("Curve_igv0p")
+default_color = Color(0.2, 0.0666667, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="Marker2D" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-1, -165)
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(-19, -142)
+texture = SubResource("AtlasTexture_nk1od")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+texture = SubResource("AtlasTexture_cn4fe")
+metadata/_edit_lock_ = true
+
+[node name="sling_band_left" type="Line2D" parent="."]
+unique_name_in_owner = true
+visible = false
+points = PackedVector2Array(-27, -169, -109, -141)
+width = 20.0
+width_curve = SubResource("Curve_igv0p")
+default_color = Color(0.2, 0.0666667, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="Area2D" type="Area2D" parent="."]
+unique_name_in_owner = true
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-5, -165)
+shape = SubResource("CircleShape2D_e7usf")
+metadata/_edit_lock_ = true

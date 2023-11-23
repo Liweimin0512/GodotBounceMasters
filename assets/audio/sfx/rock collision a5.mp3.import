@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bdnpq8h2rdm7g"
+path="res://.godot/imported/rock collision a5.mp3-c58d0dd8fb7240f90966f623b6c8c818.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/sfx/rock collision a5.mp3"
+dest_files=["res://.godot/imported/rock collision a5.mp3-c58d0dd8fb7240f90966f623b6c8c818.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://uj3kiijwua74"
+path="res://.godot/imported/wood destroyed a3.mp3-63fa64a410051549caec05d21a643894.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/sfx/wood destroyed a3.mp3"
+dest_files=["res://.godot/imported/wood destroyed a3.mp3-63fa64a410051549caec05d21a643894.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

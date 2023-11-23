@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cn0u6oqyvpasl"
+path="res://.godot/imported/special egg explosion.mp3-977be15b27b1e1bc3c0019665b2e9b38.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/sfx/special egg explosion.mp3"
+dest_files=["res://.godot/imported/special egg explosion.mp3-977be15b27b1e1bc3c0019665b2e9b38.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

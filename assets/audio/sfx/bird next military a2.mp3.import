@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bkjbr1ps2qteo"
+path="res://.godot/imported/bird next military a2.mp3-2a2300bd6eb6c9f8e6cca6f062cf42ac.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/sfx/bird next military a2.mp3"
+dest_files=["res://.godot/imported/bird next military a2.mp3-2a2300bd6eb6c9f8e6cca6f062cf42ac.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

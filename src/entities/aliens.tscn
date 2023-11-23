@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://iwebskcf4nxj"]
+
+[ext_resource type="Script" path="res://src/entities/aliens.gd" id="1_edfjp"]
+[ext_resource type="Texture2D" uid="uid://dxvd4bqq7g5ls" path="res://assets/textures/Aliens/alienBeige_round.png" id="1_mgbyi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sos7g"]
+radius = 28.0713
+
+[node name="aliens" type="RigidBody2D"]
+mass = 2.0
+max_contacts_reported = 10
+contact_monitor = true
+script = ExtResource("1_edfjp")
+impact_threshold = 1500
+required_impacts = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("1_mgbyi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_sos7g")

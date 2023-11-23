@@ -1,0 +1,80 @@
+[gd_scene load_steps=11 format=3 uid="uid://cokuevrhje6uc"]
+
+[ext_resource type="Texture2D" uid="uid://pvijx8un6l8d" path="res://assets/textures/_backgrounds/blue_desert.png" id="1_8702r"]
+[ext_resource type="Script" path="res://src/levels/level_01.gd" id="1_h1wmt"]
+[ext_resource type="Texture2D" uid="uid://btqmjc8bjmp4v" path="res://assets/textures/Other/grass.png" id="2_6gsjf"]
+[ext_resource type="PackedScene" uid="uid://iwebskcf4nxj" path="res://src/entities/aliens.tscn" id="3_li0wr"]
+[ext_resource type="PackedScene" uid="uid://dgqrw231pdt5l" path="res://src/entities/block_wood_1_1.tscn" id="4_lyr0a"]
+[ext_resource type="PackedScene" uid="uid://rkisl8v1n1a6" path="res://src/entities/slingshot.tscn" id="5_31dak"]
+[ext_resource type="PackedScene" uid="uid://bhroihduayiqh" path="res://src/entities/block_wood_1_2.tscn" id="6_gphx3"]
+[ext_resource type="PackedScene" uid="uid://bud0x6f3yee4v" path="res://src/entities/enemy.tscn" id="6_p4uvf"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tc12r"]
+texture = ExtResource("2_6gsjf")
+texture_region_size = Vector2i(70, 70)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-35, -35, 35, -35, 35, 35, -35, 35)
+
+[sub_resource type="TileSet" id="TileSet_qdg22"]
+tile_size = Vector2i(70, 70)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_tc12r")
+
+[node name="level" type="Node2D"]
+script = ExtResource("1_h1wmt")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(648.192, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(28, 26)
+scale = Vector2(0.632813, 0.632813)
+texture = ExtResource("1_8702r")
+offset = Vector2(512, 512)
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_qdg22")
+format = 2
+layer_0/tile_data = PackedInt32Array(589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589837, 0, 0, 589838, 0, 0, 589839, 0, 0, 589840, 0, 0, 589841, 0, 0, 589842, 0, 0, 589843, 0, 0, 589844, 0, 0, 589845, 0, 0, 589846, 0, 0, 589847, 0, 0, 589848, 0, 0, 589849, 0, 0, 589850, 0, 0, 589851, 0, 0, 589852, 0, 0, 589853, 0, 0, 589854, 0, 0, 589855, 0, 0, 589856, 0, 0, 589857, 0, 0, 589858, 0, 0, 589859, 0, 0, 589860, 0, 0, 589861, 0, 0, 589862, 0, 0, 655359, 0, 0, 655358, 0, 0, 655357, 0, 0, 655356, 0, 0, 655355, 0, 0, 655354, 0, 0, 655353, 0, 0, 655352, 0, 0, 655351, 0, 0, 655350, 0, 0)
+
+[node name="aliens" parent="." instance=ExtResource("3_li0wr")]
+position = Vector2(308, 600)
+
+[node name="aliens2" parent="." instance=ExtResource("3_li0wr")]
+position = Vector2(388, 600)
+
+[node name="wood_1_1" parent="." instance=ExtResource("4_lyr0a")]
+position = Vector2(842, 586)
+
+[node name="slingshot" parent="." instance=ExtResource("5_31dak")]
+position = Vector2(198, 634)
+
+[node name="wood_1_2" parent="." instance=ExtResource("6_gphx3")]
+position = Vector2(844, 436)
+rotation = 1.5708
+
+[node name="enemy" parent="." instance=ExtResource("6_p4uvf")]
+position = Vector2(848, 230)
+rotation = 1.5708
+
+[node name="wood_1_3" parent="." instance=ExtResource("6_gphx3")]
+position = Vector2(848, 296)
+
+[node name="wood_1_4" parent="." instance=ExtResource("6_gphx3")]
+position = Vector2(968, 510)
+rotation = 1.5708
+
+[node name="wood_1_5" parent="." instance=ExtResource("4_lyr0a")]
+position = Vector2(968, 366)
+
+[node name="CheckBox" type="CheckBox" parent="."]
+offset_left = 226.0
+offset_top = 188.0
+offset_right = 250.0
+offset_bottom = 212.0
+
+[connection signal="pressed" from="CheckBox" to="." method="_on_check_box_pressed"]

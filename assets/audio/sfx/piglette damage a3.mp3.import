@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dbpdhnshu3xw8"
+path="res://.godot/imported/piglette damage a3.mp3-dca8ee37feafc44e3f83027318e0e631.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/sfx/piglette damage a3.mp3"
+dest_files=["res://.godot/imported/piglette damage a3.mp3-dca8ee37feafc44e3f83027318e0e631.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

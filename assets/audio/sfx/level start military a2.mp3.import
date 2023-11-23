@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bam1t622451sh"
+path="res://.godot/imported/level start military a2.mp3-ac6f9a6e6e454c129a08a59dec059806.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/sfx/level start military a2.mp3"
+dest_files=["res://.godot/imported/level start military a2.mp3-ac6f9a6e6e454c129a08a59dec059806.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

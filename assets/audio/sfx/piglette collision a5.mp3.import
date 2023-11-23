@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://derhffa30i42d"
+path="res://.godot/imported/piglette collision a5.mp3-70134a6b914619642458148aae200a0e.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/sfx/piglette collision a5.mp3"
+dest_files=["res://.godot/imported/piglette collision a5.mp3-70134a6b914619642458148aae200a0e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

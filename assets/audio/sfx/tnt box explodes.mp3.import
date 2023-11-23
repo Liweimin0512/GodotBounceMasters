@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bvqexacqweioi"
+path="res://.godot/imported/tnt box explodes.mp3-06c069d9c785b0e2b68d0419244f7b72.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/sfx/tnt box explodes.mp3"
+dest_files=["res://.godot/imported/tnt box explodes.mp3-06c069d9c785b0e2b68d0419244f7b72.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

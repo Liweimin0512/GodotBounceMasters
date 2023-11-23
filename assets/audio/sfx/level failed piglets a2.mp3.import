@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://se0r5r5al5sd"
+path="res://.godot/imported/level failed piglets a2.mp3-549c06a8a4df955e258277d6d5489ac3.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/sfx/level failed piglets a2.mp3"
+dest_files=["res://.godot/imported/level failed piglets a2.mp3-549c06a8a4df955e258277d6d5489ac3.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

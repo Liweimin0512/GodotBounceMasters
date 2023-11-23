@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://doate4jdth1ov"
+path="res://.godot/imported/special egg.mp3-6a8966a66a1262cc44ce6fe4dfdbea48.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/sfx/special egg.mp3"
+dest_files=["res://.godot/imported/special egg.mp3-6a8966a66a1262cc44ce6fe4dfdbea48.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

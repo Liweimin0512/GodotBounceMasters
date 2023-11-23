@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://de2plu4fo0p11"
+path="res://.godot/imported/piglette oink a11.mp3-7f0f04c51b1af3af9b3778af3b8c8a89.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/sfx/piglette oink a11.mp3"
+dest_files=["res://.godot/imported/piglette oink a11.mp3-7f0f04c51b1af3af9b3778af3b8c8a89.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

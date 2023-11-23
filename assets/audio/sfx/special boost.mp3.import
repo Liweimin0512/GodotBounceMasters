@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b3lccqh60jfpt"
+path="res://.godot/imported/special boost.mp3-939240e7f1755c946a5860bde4e9fdd5.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/sfx/special boost.mp3"
+dest_files=["res://.godot/imported/special boost.mp3-939240e7f1755c946a5860bde4e9fdd5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ddu175baj3qgw"
+path="res://.godot/imported/light rolling.mp3-a290c04f82269ee3963c8fd1a83f5910.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/sfx/light rolling.mp3"
+dest_files=["res://.godot/imported/light rolling.mp3-a290c04f82269ee3963c8fd1a83f5910.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

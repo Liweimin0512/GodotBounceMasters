@@ -1,26 +1,22 @@
 [gd_scene load_steps=3 format=3 uid="uid://qpaa4dxwlg7c"]
 
-[ext_resource type="Texture2D" uid="uid://6xkapmpu5wi8" path="res://assets/textures/background/background_brown.png" id="1_ndpu2"]
-[ext_resource type="PackedScene" uid="uid://d1v3dx2sedju0" path="res://src/entities/ball.tscn" id="2_fdkvb"]
+[ext_resource type="Script" path="res://main.gd" id="1_ssvwi"]
+[ext_resource type="PackedScene" uid="uid://cokuevrhje6uc" path="res://src/levels/level_01.tscn" id="2_bhx15"]
 
 [node name="main" type="Node2D"]
+script = ExtResource("1_ssvwi")
 
 [node name="BGLayer" type="CanvasLayer" parent="."]
-layer = -100
+layer = -128
 
-[node name="Sprite2D" type="TextureRect" parent="BGLayer"]
+[node name="ColorRect" type="ColorRect" parent="BGLayer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-texture = ExtResource("1_ndpu2")
-expand_mode = 1
-stretch_mode = 1
+mouse_filter = 2
+color = Color(0.827451, 0.960784, 0.972549, 1)
+metadata/_edit_lock_ = true
 
-[node name="ball" parent="." instance=ExtResource("2_fdkvb")]
-position = Vector2(312, 288)
-
-[node name="level_01" type="Node2D" parent="."]
+[node name="level" parent="." instance=ExtResource("2_bhx15")]

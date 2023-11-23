@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cueoxbw60f7p5"
+path="res://.godot/imported/level clear military a2.mp3-f077e7b55106874d98995e68d031a5da.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/sfx/level clear military a2.mp3"
+dest_files=["res://.godot/imported/level clear military a2.mp3-f077e7b55106874d98995e68d031a5da.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

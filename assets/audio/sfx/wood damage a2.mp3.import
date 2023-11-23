@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dxa5ot6n0psj8"
+path="res://.godot/imported/wood damage a2.mp3-1800ed6e5de80e77c519f4a0e382f9e4.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/sfx/wood damage a2.mp3"
+dest_files=["res://.godot/imported/wood damage a2.mp3-1800ed6e5de80e77c519f4a0e382f9e4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
