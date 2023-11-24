@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://qpaa4dxwlg7c"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_ssvwi"]
-[ext_resource type="PackedScene" uid="uid://cokuevrhje6uc" path="res://src/levels/level_01.tscn" id="2_bhx15"]
+[ext_resource type="PackedScene" uid="uid://ditkrg1xe7e4p" path="res://src/scese/menu.tscn" id="2_2cwy6"]
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_ssvwi")
@@ -19,4 +19,5 @@ mouse_filter = 2
 color = Color(0.827451, 0.960784, 0.972549, 1)
 metadata/_edit_lock_ = true
 
-[node name="level" parent="." instance=ExtResource("2_bhx15")]
+[node name="menu" parent="." instance=ExtResource("2_2cwy6")]
+unique_name_in_owner = true

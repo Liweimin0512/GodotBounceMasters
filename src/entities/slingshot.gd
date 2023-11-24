@@ -5,17 +5,11 @@ extends Node2D
 @onready var sling_band_right: Line2D = %sling_band_right
 @onready var area_2d: Area2D = %Area2D
 @onready var marker_2d: Marker2D = %Marker2D
-
-@export var initial_velocity_factor = 10  # 速度因子，根据需要调整
+## 速度因子，根据需要调整
+@export var initial_velocity_factor = 10  
 
 var start_position : Vector2
 var drag_position := Vector2.ZERO
-var can_drag : bool = false:
-	set(value):
-		can_drag = value
-		sprite_2d_3.visible = can_drag
-		sling_band_left.visible	 = can_drag
-		sling_band_right.visible = can_drag
 # 最大拉伸距离，根据需要调整
 @export var max_stretch_distance = 100.0  
 var gravity : float = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -26,35 +20,40 @@ var points = []
 ## 要显示的点的数量
 @export var max_points = 20 
 
-@onready var s_bird :PackedScene = preload("res://src/entities/aliens.tscn")
-var bird : RigidBody2D
-#@onready var camera_2d: Camera2D = $Camera2D
+var bullet : DestructibleObject :
+	set(value):
+		if bullet:
+			marker_2d.remove_child(bullet)
+		if value:
+			marker_2d.add_child(value)
+		bullet = value
+
+signal aiming_started
+signal aiming_canceled
 
 func _ready() -> void:
 	area_2d.input_event.connect(_on_area_2d_input_event)
 	start_position = marker_2d.position
-	setup_trajectory_points()
-	bird = s_bird.instantiate()
-	marker_2d.add_child(bird)
-	bird.gravity_scale = 0
+	_setup_trajectory_points()
 
-func _process(delta: float) -> void:
-#	update_camera_position()
-	if can_drag:
-		update_sling_band()
-		update_trajectory()
+## 瞄准
+func aim() -> void:
+	sprite_2d_3.visible = true
+	sling_band_left.visible	 = true
+	sling_band_right.visible = true
+	_update_sling_band()
+	_update_trajectory()
 
-func _unhandled_input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
-		if can_drag:
-			launch_bird()
-			can_drag = false
-			drag_position = start_position  # 释放时重置位置
-			for p in points:
-				p.visible = false
+func launch() -> void:
+	bullet.linear_velocity = self._get_launch_velocity()
+	bullet.gravity_scale = 1
+	drag_position = start_position
+	sprite_2d_3.visible = false
+	sling_band_left.visible	 = false
+	sling_band_right.visible = false
 
 ## 初始化抛物线的点
-func setup_trajectory_points():
+func _setup_trajectory_points() -> void:
 	for i in range(max_points):
 		var point = Sprite2D.new()
 		point.texture = point_texture
@@ -63,7 +62,7 @@ func setup_trajectory_points():
 		point.visible = false  # 初始时不可见
 
 ## 更新弹簧
-func update_sling_band() -> void:
+func _update_sling_band() -> void:
 	var local_mouse_pos = get_local_mouse_position()
 	var stretch_vector = local_mouse_pos - start_position
 	# 限制向左（后方）拉伸
@@ -75,10 +74,10 @@ func update_sling_band() -> void:
 	sling_band_left.points[1] = drag_position + Vector2(-20, 10)
 	sling_band_right.points[1] = drag_position + Vector2(-20, 10)
 	sprite_2d_3.position = drag_position + Vector2(-20, 10)
-	bird.position = drag_position - marker_2d.position
+	bullet.position = drag_position - marker_2d.position
 
 ## 更新抛物线
-func update_trajectory():
+func _update_trajectory() -> void:
 	var initial_velocity = _get_launch_velocity()
 	var time_step = 0.1  # 时间步长
 	var total_time = 2.0  # 总模拟时间
@@ -98,16 +97,6 @@ func update_trajectory():
 	for i in range(index, max_points):
 		points[i].visible = false
 
-## 发射小鸟
-func launch_bird():
-	bird.linear_velocity = _get_launch_velocity()
-	bird.gravity_scale = 1
-
-## 更新摄像机位置
-#func update_camera_position():
-#	if not bird: return
-#	if bird.linear_velocity.length() > 10:  # 仅当小鸟移动时更新摄像机位置
-#		camera_2d.global_position = bird.global_position
 
 func _clamp_vector_to_length(v: Vector2, max_length: float) -> Vector2:
 	return v.normalized() * max_length if v.length() > max_length else v
@@ -121,9 +110,9 @@ func _get_launch_velocity() -> Vector2:
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed:
-			can_drag = true
+			aiming_started.emit()
 		else :
-			can_drag = false
+			aiming_canceled.emit()
 			drag_position = start_position  # 释放时重置位置
 			for p in points:
 				p.visible = false

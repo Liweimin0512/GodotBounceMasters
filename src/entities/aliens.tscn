@@ -8,11 +8,12 @@ radius = 28.0713
 
 [node name="aliens" type="RigidBody2D"]
 mass = 2.0
+gravity_scale = 0.0
 max_contacts_reported = 10
 contact_monitor = true
 script = ExtResource("1_edfjp")
-impact_threshold = 1500
-required_impacts = 3
+impact_threshold = 4000
+required_impacts = 10
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.8, 0.8)

@@ -1,0 +1,163 @@
+[gd_scene load_steps=5 format=3 uid="uid://ditkrg1xe7e4p"]
+
+[ext_resource type="Script" path="res://src/scene/menu.gd" id="1_4fmjv"]
+
+[sub_resource type="SystemFont" id="SystemFont_nea16"]
+font_names = PackedStringArray("Sans-Serif")
+subpixel_positioning = 0
+
+[sub_resource type="SystemFont" id="SystemFont_e8gsv"]
+font_names = PackedStringArray("Sans-Serif")
+subpixel_positioning = 0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_figdf"]
+bg_color = Color(0.239216, 0.239216, 0.239216, 1)
+
+[node name="menu" type="Node2D"]
+script = ExtResource("1_4fmjv")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="menu" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/menu/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/menu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/menu/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = SubResource("SystemFont_nea16")
+theme_override_font_sizes/font_size = 128
+text = "愤怒的外星人"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/menu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/menu/MarginContainer/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 10
+
+[node name="btn_game" type="Button" parent="CanvasLayer/menu/MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_e8gsv")
+theme_override_font_sizes/font_size = 55
+text = "新游戏"
+
+[node name="btn_setting" type="Button" parent="CanvasLayer/menu/MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_e8gsv")
+theme_override_font_sizes/font_size = 55
+disabled = true
+text = "设置"
+
+[node name="btn_credits" type="Button" parent="CanvasLayer/menu/MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_e8gsv")
+theme_override_font_sizes/font_size = 55
+text = "开发者名单"
+
+[node name="btn_quit" type="Button" parent="CanvasLayer/menu/MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_e8gsv")
+theme_override_font_sizes/font_size = 55
+text = "退出"
+
+[node name="credits" type="Control" parent="CanvasLayer"]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/credits"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_figdf")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/credits/PanelContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/credits/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/credits/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="CanvasLayer/credits/PanelContainer/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = SubResource("SystemFont_nea16")
+theme_override_font_sizes/font_size = 128
+text = "开发人员名单"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/credits/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/credits/PanelContainer/MarginContainer/VBoxContainer/MarginContainer2"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 55
+theme_override_font_sizes/bold_font_size = 55
+theme_override_font_sizes/italics_font_size = 55
+theme_override_font_sizes/bold_italics_font_size = 55
+theme_override_font_sizes/mono_font_size = 55
+bbcode_enabled = true
+text = "[center]游戏设计 老李
+程序开发 老李
+美术资源 肯尼"
+
+[node name="MarginContainer3" type="MarginContainer" parent="CanvasLayer/credits/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="btn_credits_quit" type="Button" parent="CanvasLayer/credits/PanelContainer/MarginContainer/VBoxContainer/MarginContainer3"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 55
+text = "返回"
