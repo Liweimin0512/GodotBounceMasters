@@ -26,11 +26,11 @@ var game_state: GAME_STATE = GAME_STATE.READY:
 
 @export var MIN_VELOCITY_THRESHOLD:float = 10
 @export var COLLISION_WAIT_TIME: float = 3
+var last_collision_time = 0
 var bullet: DestructibleObject :
 	set(value):
 		slingshot.bullet = value
 		bullet = value
-var last_collision_time = 0
 var s_bullet : PackedScene = preload("res://src/entities/aliens.tscn")
 
 signal successed
@@ -54,6 +54,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		if self.game_state == GAME_STATE.AIMING:
 			game_state = GAME_STATE.LAUNCHED
 
+## 关卡初始化
 func level_ready() -> void:
 	if game_state != GAME_STATE.READY : return
 	await get_tree().create_timer(0.5).timeout
@@ -63,7 +64,7 @@ func level_ready() -> void:
 ## 等待玩家输入
 func waiting() -> void:
 	bullet = s_bullet.instantiate()
-	bullet.body_entered.connect(_on_bird_body_entered)
+	bullet.body_entered.connect(_on_bullet_body_entered)
 
 ## 瞄准
 func aiming() -> void:
@@ -76,7 +77,7 @@ func launch() -> void:
 func end_turn():
 	# 回合结束逻辑
 	# 可能包括更新UI、准备下一个回合等
-	bullet.body_entered.disconnect(_on_bird_body_entered)
+	bullet.body_entered.disconnect(_on_bullet_body_entered)
 	bullet = null
 	if not _has_enemy():
 		game_state = GAME_STATE.GAME_SUCCESSED
@@ -87,11 +88,13 @@ func end_turn():
 		await reset_camera()
 		game_state = GAME_STATE.WAITING
 
+## 复位摄像机
 func reset_camera() -> void:
 	var tween : Tween = create_tween()
 	tween.tween_property(camera_2d, "position:x", get_viewport_rect().size.x / 2, 2)
 	await tween.finished
 
+## 是否结束回合？
 func _is_turn_end() -> bool:
 	return _is_bullet_stopped() and _is_never_collis()
 
@@ -105,23 +108,27 @@ func update_camera_position():
 func _is_bullet_stopped() -> bool:
 	return bullet.linear_velocity.length() < MIN_VELOCITY_THRESHOLD
 
-## 判断小鸟是否一段时间未产生新的碰撞
+## 判断是否一段时间未产生新的碰撞
 func _is_never_collis() -> bool:
 	return (Time.get_ticks_msec() - last_collision_time) > COLLISION_WAIT_TIME
 
+## 存在敌人
 func _has_enemy() -> bool:
 	return get_tree().get_nodes_in_group("enemy").size() > 0
 
+## 存在子弹
 func _has_bullet() -> bool:
 	return bullets.get_child_count() > 0
 
-func _on_bird_body_entered(body: DestructibleObject):
-	# 鸟开始与另一个物体碰撞
+func _on_bullet_body_entered(body: DestructibleObject):
+	# 子弹开始与另一个物体碰撞
 	last_collision_time = Time.get_ticks_msec()
 
 func _on_slingshot_aiming_started() -> void:
+	if game_state != GAME_STATE.WAITING : return
 	game_state = GAME_STATE.AIMING
 
 func _on_slingshot_aiming_canceled() -> void:
+	if game_state != GAME_STATE.AIMING : return
 	game_state = GAME_STATE.WAITING
 
