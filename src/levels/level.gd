@@ -19,14 +19,15 @@ var game_state: GAME_STATE = GAME_STATE.READY:
 				failing.emit()
 
 @onready var slingshot: Node2D = $slingshot
-@onready var aliens: RigidBody2D = $aliens
-@onready var aliens_2: RigidBody2D = $aliens2
+#@onready var aliens: RigidBody2D = $aliens
+#@onready var aliens_2: RigidBody2D = $aliens2
 @onready var camera_2d: Camera2D = $Camera2D
 @onready var bullets: Node2D = $bullets
 
 @export var MIN_VELOCITY_THRESHOLD:float = 10
 @export var COLLISION_WAIT_TIME: float = 3
 var last_collision_time = 0
+
 var bullet: DestructibleObject :
 	set(value):
 		slingshot.bullet = value
@@ -51,7 +52,7 @@ func _process(delta):
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
-		if self.game_state == GAME_STATE.AIMING:
+		if event.is_released() and self.game_state == GAME_STATE.AIMING:
 			game_state = GAME_STATE.LAUNCHED
 
 ## 关卡初始化
@@ -101,7 +102,7 @@ func _is_turn_end() -> bool:
 ## 更新摄像机位置
 func update_camera_position():
 	if not bullet: return
-	if bullet.linear_velocity.length() > 10:  # 仅当小鸟移动时更新摄像机位置
+	if not _is_bullet_stopped():  # 仅当小鸟移动时更新摄像机位置
 		camera_2d.global_position = bullet.global_position
 
 ## 判断是否静止

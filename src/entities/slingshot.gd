@@ -44,6 +44,7 @@ func aim() -> void:
 	_update_sling_band()
 	_update_trajectory()
 
+## 发射
 func launch() -> void:
 	bullet.linear_velocity = self._get_launch_velocity()
 	bullet.gravity_scale = 1
@@ -61,7 +62,7 @@ func _setup_trajectory_points() -> void:
 		add_child(point)
 		point.visible = false  # 初始时不可见
 
-## 更新弹簧
+## 更新橡皮筋
 func _update_sling_band() -> void:
 	var local_mouse_pos = get_local_mouse_position()
 	var stretch_vector = local_mouse_pos - start_position

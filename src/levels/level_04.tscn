@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=3 uid="uid://p78tp1dnoisf"]
+
+[ext_resource type="PackedScene" uid="uid://cokuevrhje6uc" path="res://src/levels/level.tscn" id="1_r1pms"]
+[ext_resource type="PackedScene" uid="uid://dgqrw231pdt5l" path="res://src/entities/block_wood_1_1.tscn" id="2_l842y"]
+[ext_resource type="PackedScene" uid="uid://bhroihduayiqh" path="res://src/entities/block_wood_1_2.tscn" id="3_108fh"]
+[ext_resource type="PackedScene" uid="uid://bud0x6f3yee4v" path="res://src/entities/enemy.tscn" id="4_vfj5x"]
+
+[node name="level_04" instance=ExtResource("1_r1pms")]
+
+[node name="Camera2D2" type="Camera2D" parent="." index="5"]
+position = Vector2(1728, 324)
+
+[node name="Camera2D3" type="Camera2D" parent="." index="6"]
+position = Vector2(1728, 324)
+
+[node name="wood_1_1" parent="." index="7" instance=ExtResource("2_l842y")]
+position = Vector2(1489, 591)
+
+[node name="wood_1_6" parent="." index="8" instance=ExtResource("2_l842y")]
+position = Vector2(1950, 591)
+
+[node name="wood_1_2" parent="." index="9" instance=ExtResource("3_108fh")]
+position = Vector2(1488, 438)
+rotation = 1.5708
+
+[node name="enemy" parent="." index="10" instance=ExtResource("4_vfj5x")]
+position = Vector2(1492, 232)
+rotation = 1.5708
+
+[node name="enemy2" parent="." index="11" instance=ExtResource("4_vfj5x")]
+position = Vector2(1742, 302)
+rotation = 1.5708
+
+[node name="enemy3" parent="." index="12" instance=ExtResource("4_vfj5x")]
+position = Vector2(1948, 520)
+rotation = 1.5708
+
+[node name="wood_1_7" parent="." index="13" instance=ExtResource("2_l842y")]
+position = Vector2(2090, 591)
+
+[node name="enemy4" parent="." index="14" instance=ExtResource("4_vfj5x")]
+position = Vector2(2088, 520)
+rotation = 1.5708
+
+[node name="wood_1_3" parent="." index="15" instance=ExtResource("3_108fh")]
+position = Vector2(1492, 298)
+
+[node name="wood_1_4" parent="." index="16" instance=ExtResource("3_108fh")]
+position = Vector2(1742, 371)
+
+[node name="wood_1_5" parent="." index="17" instance=ExtResource("3_108fh")]
+position = Vector2(1742, 518)
+rotation = 1.5708
+
+[node name="Camera2D4" type="Camera2D" parent="." index="18"]
+position = Vector2(1728, 324)

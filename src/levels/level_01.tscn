@@ -7,13 +7,13 @@
 
 [node name="level_01" instance=ExtResource("1_xdvik")]
 
-[node name="wood_1_1" parent="." index="6" instance=ExtResource("2_xvd5h")]
+[node name="wood_1_1" parent="." index="5" instance=ExtResource("2_xvd5h")]
 position = Vector2(1486, 588)
 
-[node name="wood_1_2" parent="." index="7" instance=ExtResource("3_q1wxl")]
+[node name="wood_1_2" parent="." index="6" instance=ExtResource("3_q1wxl")]
 position = Vector2(1486, 438)
 rotation = 1.5708
 
-[node name="enemy" parent="." index="8" instance=ExtResource("4_hy7es")]
+[node name="enemy" parent="." index="7" instance=ExtResource("4_hy7es")]
 position = Vector2(1486, 294)
 rotation = 1.5708
