@@ -1,17 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://ditkrg1xe7e4p"]
 
 [ext_resource type="Script" path="res://src/scene/menu.gd" id="1_4fmjv"]
+[ext_resource type="FontFile" uid="uid://i6rohtpkljwg" path="res://assets/fonts/SourceHanSansCN-Normal.otf" id="2_1lfgv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_figdf"]
+bg_color = Color(0.239216, 0.239216, 0.239216, 1)
 
 [sub_resource type="SystemFont" id="SystemFont_nea16"]
 font_names = PackedStringArray("Sans-Serif")
 subpixel_positioning = 0
-
-[sub_resource type="SystemFont" id="SystemFont_e8gsv"]
-font_names = PackedStringArray("Sans-Serif")
-subpixel_positioning = 0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_figdf"]
-bg_color = Color(0.239216, 0.239216, 0.239216, 1)
 
 [node name="menu" type="Node2D"]
 script = ExtResource("1_4fmjv")
@@ -46,7 +43,7 @@ layout_mode = 2
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
-theme_override_fonts/font = SubResource("SystemFont_nea16")
+theme_override_fonts/font = ExtResource("2_1lfgv")
 theme_override_font_sizes/font_size = 128
 text = "愤怒的外星人"
 horizontal_alignment = 1
@@ -65,14 +62,14 @@ theme_override_constants/separation = 10
 [node name="btn_game" type="Button" parent="CanvasLayer/menu/MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_fonts/font = SubResource("SystemFont_e8gsv")
+theme_override_fonts/font = ExtResource("2_1lfgv")
 theme_override_font_sizes/font_size = 55
 text = "新游戏"
 
 [node name="btn_setting" type="Button" parent="CanvasLayer/menu/MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_fonts/font = SubResource("SystemFont_e8gsv")
+theme_override_fonts/font = ExtResource("2_1lfgv")
 theme_override_font_sizes/font_size = 55
 disabled = true
 text = "设置"
@@ -80,14 +77,14 @@ text = "设置"
 [node name="btn_credits" type="Button" parent="CanvasLayer/menu/MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_fonts/font = SubResource("SystemFont_e8gsv")
+theme_override_fonts/font = ExtResource("2_1lfgv")
 theme_override_font_sizes/font_size = 55
 text = "开发者名单"
 
 [node name="btn_quit" type="Button" parent="CanvasLayer/menu/MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_fonts/font = SubResource("SystemFont_e8gsv")
+theme_override_fonts/font = ExtResource("2_1lfgv")
 theme_override_font_sizes/font_size = 55
 text = "退出"
 
