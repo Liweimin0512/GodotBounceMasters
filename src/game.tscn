@@ -1,8 +1,25 @@
-[gd_scene load_steps=6 format=3 uid="uid://wi0g1v6t8k86"]
+[gd_scene load_steps=6 format=3 uid="uid://s7asvj50peyl"]
 
-[ext_resource type="Script" path="res://game.gd" id="1_2hbi1"]
-[ext_resource type="PackedScene" uid="uid://domqppufv13sj" path="res://character_body_2d.tscn" id="1_vehf0"]
+[ext_resource type="PackedScene" uid="uid://iwebskcf4nxj" path="res://src/entities/aliens.tscn" id="1_vehf0"]
 [ext_resource type="Texture2D" uid="uid://nyx83pk8xhy4" path="res://assets/textures/elements/Wood elements/elementWood010.png" id="2_cqhj3"]
+
+[sub_resource type="GDScript" id="GDScript_v85oy"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	body.queue_free()
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dnng2"]
 size = Vector2(72, 72)
@@ -11,7 +28,7 @@ size = Vector2(72, 72)
 size = Vector2(63, 692)
 
 [node name="game" type="Node2D"]
-script = ExtResource("1_2hbi1")
+script = SubResource("GDScript_v85oy")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_vehf0")]
 position = Vector2(586, 78)
