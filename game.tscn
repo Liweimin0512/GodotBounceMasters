@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://wi0g1v6t8k86"]
+
+[ext_resource type="Script" path="res://game.gd" id="1_2hbi1"]
+[ext_resource type="PackedScene" uid="uid://domqppufv13sj" path="res://character_body_2d.tscn" id="1_vehf0"]
+[ext_resource type="Texture2D" uid="uid://nyx83pk8xhy4" path="res://assets/textures/elements/Wood elements/elementWood010.png" id="2_cqhj3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dnng2"]
+size = Vector2(72, 72)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8gtg1"]
+size = Vector2(63, 692)
+
+[node name="game" type="Node2D"]
+script = ExtResource("1_2hbi1")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_vehf0")]
+position = Vector2(586, 78)
+collision_mask = 2
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(422, 234)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("2_cqhj3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_dnng2")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(10, -2)
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(18, 330)
+shape = SubResource("RectangleShape2D_8gtg1")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

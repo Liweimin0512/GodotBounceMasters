@@ -12,7 +12,7 @@ config_version=5
 
 config/name="GodotAngryBird"
 run/main_scene="res://main.tscn"
-config/features=PackedStringArray("4.1", "Forward Plus")
+config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://assets/textures/Aliens/alienBeige_round.png"
 
 [display]
@@ -26,3 +26,8 @@ test={
 "deadzone": 0.5,
 "events": []
 }
+
+[layer_names]
+
+2d_physics/layer_1="player"
+2d_physics/layer_2="block"
